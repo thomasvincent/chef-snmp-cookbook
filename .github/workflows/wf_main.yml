@@ -1,9 +1,8 @@
 name: kitchen
-on: [pull_request]
+on: [push, pull_request]
 jobs:
-  macos:
-    needs: [mdl, yamllint, delivery]
-    runs-on: macos-latest
+  kitchen:
+    runs-on: ubuntu-latest
     steps:
       - name: Check out code
         uses: actions/checkout@master
